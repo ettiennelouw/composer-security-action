@@ -1,0 +1,15 @@
+name: "Composer Security Checker"
+description: "Check for security vulnerabilities in Composer dependencies"
+author: "Ettienne Louw"
+
+inputs:
+  attribute:
+    description: "Action to perform"
+    required: true
+    default: "audit"
+
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.attribute }}

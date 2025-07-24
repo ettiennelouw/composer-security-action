@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-echo "The first argument is: $1"
+echo "The attribute is: $1"
 
 # if [ -z "$1" || "$1" == "audit" ]; then
     # composer $1 --format=json --no-scripts --no-plugins --no-interaction > composer-audit-output.json

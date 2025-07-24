@@ -2,6 +2,8 @@
 
 echo "The attribute is: $1"
 
+sh -c "git config --global --add safe.directory $PWD"
+
 if [[ -z "$1" || "$1" == "audit" ]]; then
     # composer $1 --format=json --no-scripts --no-plugins --no-interaction > composer-audit-output.json
     composer audit --format=json --no-scripts --no-plugins --no-interaction > composer-audit-output.json

@@ -11,8 +11,8 @@ jobs:
       - name: "Checkout code"
         uses: actions/checkout@v4
 
-      - name: Install PHP with extensions
-        uses: shivammathur/setup-php@2.26.0
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
           coverage: "none"
           php-version: 8.2
@@ -26,5 +26,5 @@ jobs:
       - name: Run composer security
         uses: ../
         with:
-            action: audit # Default (Optional)
+            attribute: audit # Default (Optional)
 ```

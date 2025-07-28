@@ -41,7 +41,7 @@ MARKDOWN;
 // $data
 // DATA;
 
-    $output .= "Variable value: " . $data[0];
+    $output .= "Variable value: " . (string) $data;
 
     return $output;
 }

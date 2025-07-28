@@ -34,7 +34,7 @@ MARKDOWN;
     foreach ($installed as $issues) {
         foreach ($issues as $issue) {
             $output .= sprintf(
-                "\n| %s | %s |",
+                "\n| %s | %s | %s | %s | %s | %s |",
                 $issue['name'],
                 $issue['version'],
                 $issue['release-age'],

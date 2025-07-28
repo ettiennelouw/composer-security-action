@@ -20,8 +20,8 @@ function renderValiditiers($data): string
 
 MARKDOWN;
 
-    if (empty($advisories)) {
-        $output .= 'No security vulnerability advisories found.';
+    if (empty($data)) {
+        $output .= 'No validation advisories found.';
         return $output;
     }
 

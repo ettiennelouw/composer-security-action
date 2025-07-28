@@ -31,18 +31,16 @@ MARKDOWN;
 | ------- | ------- | ----------- | ------ | ------ | --------- |
 MARKDOWN;
 
-    foreach ($installed as $issues) {
-        foreach ($issues as $issue) {
-            $output .= sprintf(
-                "\n| %s | %s | %s | %s | %s | %s |",
-                $issue['name'],
-                $issue['version'],
-                $issue['release-age'],
-                $issue['latest'],
-                $issue['latest-status'],
-                $issue['abandoned'] ? 'Yes' : 'No'
-            );
-        }
+    foreach ($installed as $issue) {
+        $output .= sprintf(
+            "\n| %s | %s | %s | %s | %s | %s |",
+            $issue['name'],
+            $issue['version'],
+            $issue['release-age'],
+            $issue['latest'],
+            $issue['latest-status'],
+            $issue['abandoned'] ? 'Yes' : 'No'
+        );
     }
 
     return $output;

@@ -3,6 +3,7 @@ FROM composer:latest
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-COPY jsonToOutput.php /jsonToOutput.php
+COPY jsonAuditToOutput.php /jsonAuditToOutput.php
+COPY jsonOutdatedToOutput.php /jsonOutdatedToOutput.php
 
 ENTRYPOINT ["/entrypoint.sh"]

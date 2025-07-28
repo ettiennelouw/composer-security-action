@@ -16,9 +16,9 @@ if [[ "$1" == "outdated" ]]; then
 fi
 
 if [[ "$1" == "validate" ]]; then
-    composer $1 --no-scripts --no-plugins --no-interaction > composer-validate-output.json
-    cat composer-validate-output.json
-    php /jsonValidateToOutput.php composer-validate-output.json >> $GITHUB_STEP_SUMMARY
+    composer $1 --no-scripts --no-plugins --no-interaction > composer-validate-output.txt
+    cat composer-validate-output.txt
+    php /jsonValidateToOutput.php composer-validate-output.txt >> $GITHUB_STEP_SUMMARY
 fi
 
 # exit $status;

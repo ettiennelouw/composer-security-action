@@ -10,13 +10,13 @@ if [[ -z "$1" || "$1" == "audit" ]]; then
 fi
 
 if [[ "$1" == "outdated" ]]; then
-    composer $1 --format=json --no-scripts --no-plugins --no-interaction > composer-audit-output.json
+    composer $1 --format=json --no-scripts --no-plugins --no-interaction > composer-outdated-output.json
     cat composer-outdated-output.json
     php /jsonOutdatedToOutput.php composer-outdated-output.json >> $GITHUB_STEP_SUMMARY
 fi
 
 if [[ "$1" == "validate" ]]; then
-    composer $1 --format=json --no-scripts --no-plugins --no-interaction > composer-audit-output.json
+    composer $1 --no-scripts --no-plugins --no-interaction > composer-validate-output.json
     cat composer-validate-output.json
     php /jsonValidateToOutput.php composer-validate-output.json >> $GITHUB_STEP_SUMMARY
 fi

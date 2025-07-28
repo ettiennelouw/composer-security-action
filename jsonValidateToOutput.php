@@ -27,9 +27,19 @@ MARKDOWN;
         return $output;
     }
 
-    $output .= <<<DATA
-$data
-DATA;
+        $output .= <<<MARKDOWN
+| Details |
+| ------- |
+MARKDOWN;
+
+    $output .= sprintf(
+        "\n| %s |",
+        $data,
+    );
+
+//     $output .= <<<DATA
+// $data
+// DATA;
 
     return $output;
 }

@@ -20,8 +20,8 @@ function renderValiditiers($data): string
 
 MARKDOWN;
 
-    if (empty($data)) {
-        $output .= 'No validation advisories found.';
+    if ($data == './composer.json is valid') {
+        $output .= 'No validation advisories found: ./composer.json is valid';
         return $output;
     }
 

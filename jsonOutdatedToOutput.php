@@ -28,7 +28,7 @@ MARKDOWN;
 
     $output .= <<<MARKDOWN
 | Package | Direct | Version | Release Age | Latest | Latest Release Date | Status | Abandoned |
-| ------- | ------ |------- | ----------- | ------ | ------------------- | ------ | --------- |
+| ------- | ------ |-------- | ----------- | ------ | ------------------- | ------ | --------- |
 MARKDOWN;
 
     foreach ($installed as $issue) {

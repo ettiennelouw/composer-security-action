@@ -27,19 +27,21 @@ MARKDOWN;
         return $output;
     }
 
-        $output .= <<<MARKDOWN
-| Details |
-| ------- |
-MARKDOWN;
+//         $output .= <<<MARKDOWN
+// | Details |
+// | ------- |
+// MARKDOWN;
 
-    $output .= sprintf(
-        "\n| %s |",
-        $data,
-    );
+//     $output .= sprintf(
+//         "\n| %s |",
+//         $data,
+//     );
 
 //     $output .= <<<DATA
 // $data
 // DATA;
+
+    $output .= "Variable value: " . $data;
 
     return $output;
 }

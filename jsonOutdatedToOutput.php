@@ -17,7 +17,7 @@ function renderFlavoredMarkdown(string $filename): void
 function renderInstalled(array $installed): string
 {
     $output = <<<MARKDOWN
-## :exclamation: :exclamation: Outdated Security Vulnerabilities
+## :exclamation: Outdated Security Vulnerabilities
 
 MARKDOWN;
 
@@ -27,19 +27,20 @@ MARKDOWN;
     }
 
     $output .= <<<MARKDOWN
-| Package | Version | Release Age | Latest | Status | Abandoned |
-| ------- | ------- | ----------- | ------ | ------ | --------- |
+| Package | Version | Release Age | Latest | Latest Release Date | Status | Abandoned |
+| ------- | ------- | ----------- | ------ | ------------------- | ------ | --------- |
 MARKDOWN;
 
     foreach ($installed as $issue) {
         $output .= sprintf(
-            "\n| %s | %s | %s | %s | %s | %s |",
+            "\n| %s | %s | %s | %s | %s | %s | %s |",
             $issue['name'],
             $issue['version'],
             $issue['release-age'],
             $issue['latest'],
+            DateTime::createFromFormat(DATE_ATOM, $issue['latest-release-date'])->format('Y-m-d H:i:s'),
             $issue['latest-status'],
-            $issue['abandoned'] ? 'Yes' : 'No'
+            $issue['abandoned'] ? 'YES' : 'No'
         );
     }
 

@@ -20,7 +20,7 @@ function renderFlavoredMarkdown(string $filename): void
 function renderAdvisories(array $advisories): string
 {
     $output = <<<MARKDOWN
-## :exclamation: :exclamation: Security Vulnerabilities
+## :exclamation: Security Vulnerabilities
 
 MARKDOWN;
 

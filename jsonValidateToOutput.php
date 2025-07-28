@@ -15,6 +15,8 @@ function renderFlavoredMarkdown(string $filename): void
  */
 function renderValiditiers($data): string
 {
+    echo $data;
+
     $output = <<<MARKDOWN
 ## :warning: Validate composer.json & composer.lock
 

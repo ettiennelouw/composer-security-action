@@ -7,21 +7,21 @@ function renderFlavoredMarkdown(string $filename): void
     $json = file_get_contents($filename);
     $data = json_decode($json, true);
 
-    echo renderAdvisories($data['advisories']);
+    echo renderInstalled($data['installed']);
 }
 
 /**
  * @param array<string, array<array{name: string, direct-dependency: boolean, homepage: ?string, source: string, version: string, release-age: string, release-date: string, latest: string, latest-status: string, latest-release-date: string, description: string, abandoned: bool}>> $advisories
  * @return string
  */
-function renderAdvisories(array $advisories): string
+function renderInstalled(array $installed): string
 {
     $output = <<<MARKDOWN
 ## :exclamation: :exclamation: Outdated Security Vulnerabilities
 
 MARKDOWN;
 
-    if (empty($advisories)) {
+    if (empty($installed)) {
         $output .= 'No outdated vulnerability advisories found.';
         return $output;
     }
@@ -31,7 +31,7 @@ MARKDOWN;
 | ------- | ------- | ----------- | ------ | ------ | --------- |
 MARKDOWN;
 
-    foreach ($advisories as $issues) {
+    foreach ($installed as $issues) {
         foreach ($issues as $issue) {
             $output .= sprintf(
                 "\n| %s | %s |",

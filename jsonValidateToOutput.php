@@ -25,7 +25,9 @@ MARKDOWN;
         return $output;
     }
 
-    $output .= $data;
+    $output .= <<<MARKDOWN
+$data
+MARKDOWN;
 
     return $output;
 }

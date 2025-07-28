@@ -17,12 +17,12 @@ function renderFlavoredMarkdown(string $filename): void
 function renderInstalled(array $installed): string
 {
     $output = <<<MARKDOWN
-## :exclamation: Outdated Security Vulnerabilities
+## :warning: Outdated Packages with Updates
 
 MARKDOWN;
 
     if (empty($installed)) {
-        $output .= 'No outdated vulnerability advisories found.';
+        $output .= 'No outdated advisories found.';
         return $output;
     }
 

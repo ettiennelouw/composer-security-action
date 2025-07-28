@@ -5,7 +5,7 @@ renderFlavoredMarkdown($argv[1]);
 function renderFlavoredMarkdown(string $filename): void
 {
     $data = file_get_contents($filename);
-
+    printf($data);
     echo renderValiditiers($data);
 }
 

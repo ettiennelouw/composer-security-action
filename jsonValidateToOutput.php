@@ -10,7 +10,7 @@ function renderFlavoredMarkdown(string $filename): void
 }
 
 /**
- * @param $data<string>
+ * @param $data string
  * @return string
  */
 function renderValiditiers($data): string
@@ -25,9 +25,9 @@ MARKDOWN;
         return $output;
     }
 
-    $output .= <<<MARKDOWN
+    $output .= <<<DATA
 $data
-MARKDOWN;
+DATA;
 
-    return $data;
+    return $output;
 }

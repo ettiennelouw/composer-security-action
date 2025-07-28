@@ -29,5 +29,5 @@ MARKDOWN;
 $data
 MARKDOWN;
 
-    return $output;
+    return $data;
 }
